@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYF · Tuyển CTV K68 – Ban Chương trình</title>
+<meta name="description" content="HYF tuyển cộng tác viên K68 Ban Chương trình. Gia nhập đội ngũ làm nên những sân khấu rực rỡ!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p900:#2a0f5c; --p800:#3b1584; --p700:#5b21b6; --p600:#6d28d9; --p500:#8b5cf6;
+  --p300:#c4b5fd; --p200:#ddd6fe; --p100:#ede9fe; --p50:#f7f3ff;
+  --pink:#f9a8d4; --gold:#fcd34d; --ink:#1f1140; --muted:#6b5f8a;
+  --radius:22px; --shadow:0 12px 40px -12px rgba(91,33,182,.35);
+  --font:'Nunito',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-d:'Baloo 2','Nunito',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--p50);line-height:1.6;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+.container{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3{font-family:var(--font-d);line-height:1.15}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:800 1rem var(--font);padding:.95rem 1.6rem;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:linear-gradient(135deg,var(--p500),var(--p700));color:#fff;box-shadow:0 10px 24px -8px rgba(109,40,217,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 28px -8px rgba(109,40,217,.8)}
+.btn-ghost{background:#fff;color:var(--p700);border:2px solid var(--p200)}
+.btn-ghost:hover{background:var(--p100);transform:translateY(-3px)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(247,243,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--p100)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:.6rem;font:800 1.5rem var(--font-d);color:var(--p700);text-decoration:none}
+.logo svg{width:36px;height:36px}
+.nav-links{display:flex;gap:1.6rem;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-weight:700;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--p600)}
+.nav-links .btn{padding:.6rem 1.2rem;color:#fff}
+.nav-links .btn:hover{color:#fff}
+@media(max-width:760px){.nav-links li:not(:last-child){display:none}}
+
+/* HERO */
+.hero{position:relative;background:radial-gradient(circle at 80% 20%,#7c3aed 0,transparent 45%),linear-gradient(160deg,var(--p900),var(--p700));color:#fff;overflow:hidden;padding:4.5rem 0 7rem}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:80px;background:var(--p50);clip-path:ellipse(60% 100% at 50% 100%)}
+.hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;position:relative;z-index:2}
+.badge{display:inline-flex;gap:.5rem;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:.4rem 1rem;border-radius:999px;font-weight:800;font-size:.9rem;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);font-weight:800;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--gold);position:relative;white-space:nowrap}
+.hero p.lead{font-size:1.15rem;color:#e9defe;max-width:520px;margin-bottom:1.8rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem}
+.hero .btn-primary{background:linear-gradient(135deg,#fde68a,#fbbf24);color:var(--p900);box-shadow:0 10px 24px -8px rgba(251,191,36,.6)}
+.hero .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.14)}
+.stats{display:flex;gap:2rem;margin-top:2.2rem;flex-wrap:wrap}
+.stats b{display:block;font:800 2rem var(--font-d);color:var(--gold)}
+.stats span{font-size:.9rem;color:#d8c9fb}
+.cat-stage{position:relative;display:grid;place-items:center}
+.cat-stage .glow{position:absolute;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(196,181,253,.55),transparent 70%);filter:blur(10px)}
+#heroCat{width:min(380px,90%);filter:drop-shadow(0 20px 30px rgba(0,0,0,.35));position:relative;animation:float 4s ease-in-out infinite}
+.bubble{position:absolute;top:2%;right:2%;background:#fff;color:var(--p700);font:800 1rem var(--font-d);padding:.6rem 1rem;border-radius:18px 18px 18px 4px;box-shadow:var(--shadow);animation:float 3.2s ease-in-out infinite .4s}
+@keyframes float{50%{transform:translateY(-12px)}}
+.paws{position:absolute;inset:0;z-index:1;pointer-events:none}
+.paws i{position:absolute;width:34px;height:34px;opacity:.12;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='white'%3E%3Cellipse cx='32' cy='42' rx='14' ry='12'/%3E%3Cellipse cx='12' cy='28' rx='6' ry='8'/%3E%3Cellipse cx='25' cy='15' rx='6' ry='8'/%3E%3Cellipse cx='39' cy='15' rx='6' ry='8'/%3E%3Cellipse cx='52' cy='28' rx='6' ry='8'/%3E%3C/g%3E%3C/svg%3E");animation:drift 14s linear infinite}
+@keyframes drift{from{transform:translateY(0) rotate(0)}to{transform:translateY(-60px) rotate(25deg)}}
+@media(max-width:860px){.hero .container{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-inline:auto}.hero-cta,.stats{justify-content:center}.cat-stage{order:-1}}
+
+/* SECTIONS */
+section{padding:5rem 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 3rem}
+.sec-head .tag{display:inline-block;color:var(--p600);background:var(--p100);font-weight:800;padding:.3rem .9rem;border-radius:999px;font-size:.85rem;margin-bottom:.8rem}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--p800);margin-bottom:.7rem}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem}
+.card{background:#fff;border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow);border:1px solid var(--p100);transition:transform .25s,border-color .25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);border-color:var(--p300)}
+.card .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;background:linear-gradient(135deg,var(--p100),var(--p200));margin-bottom:1rem}
+.card h3{font-size:1.3rem;color:var(--p700);margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.97rem}
+.card::after{content:"🐾";position:absolute;right:-8px;bottom:-14px;font-size:3.4rem;opacity:.07;transform:rotate(-20deg)}
+
+.band{background:linear-gradient(160deg,var(--p800),var(--p600));color:#fff}
+.band .sec-head h2{color:#fff}.band .sec-head p{color:#e2d6ff}.band .sec-head .tag{background:rgba(255,255,255,.15);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;counter-reset:s}
+.step{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:1.8rem 1.4rem;counter-increment:s;position:relative}
+.step::before{content:counter(s);position:absolute;top:-18px;left:1.4rem;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--p900);font:800 1.2rem var(--font-d);display:grid;place-items:center;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.step h3{margin:.5rem 0 .3rem;font-size:1.25rem}
+.step p{color:#e2d6ff;font-size:.95rem}
+.countdown{display:none;justify-content:center;gap:1rem;margin-top:2.5rem}
+.countdown.on{display:flex}
+.countdown div{background:rgba(255,255,255,.14);border-radius:16px;padding:.8rem 1.2rem;min-width:84px;text-align:center}
+.countdown b{display:block;font:800 2rem var(--font-d);color:var(--gold)}
+.countdown span{font-size:.8rem;color:#e2d6ff}
+
+/* FORM */
+#apply{background:linear-gradient(180deg,var(--p50),var(--p100))}
+.form-wrap{max-width:820px;margin:0 auto;background:#fff;border-radius:30px;box-shadow:var(--shadow);border:1px solid var(--p100);overflow:hidden}
+.form-top{background:linear-gradient(135deg,var(--p600),var(--p800));color:#fff;padding:1.6rem 2rem 1.4rem;position:relative}
+.form-top h3{font-size:1.5rem}
+.form-top p{color:#e2d6ff;font-size:.95rem}
+.progress{height:10px;border-radius:99px;background:rgba(255,255,255,.2);margin-top:1rem;position:relative}
+.progress i{position:absolute;inset:0 auto 0 0;width:25%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#fff);transition:width .5s cubic-bezier(.4,1.4,.5,1)}
+.progress em{position:absolute;top:-17px;left:25%;transform:translateX(-70%);font-size:1.4rem;font-style:normal;transition:left .5s cubic-bezier(.4,1.4,.5,1)}
+.stepnames{display:flex;justify-content:space-between;margin-top:.7rem;font-size:.8rem;font-weight:800;color:#cdbcf9}
+.stepnames span.on{color:#fff}
+form{padding:2rem}
+.fstep{display:none;animation:in .45s ease}
+.fstep.on{display:block}
+@keyframes in{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.fstep>h4{font:800 1.3rem var(--font-d);color:var(--p700);margin-bottom:1.2rem;display:flex;gap:.5rem;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.2rem}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}form{padding:1.4rem}}
+.field{margin-bottom:1.3rem}
+.field>label,.field>.lbl{display:block;font-weight:800;margin-bottom:.4rem;color:var(--ink)}
+.req{color:#e11d48;margin-left:2px}
+.hint{display:block;font-size:.85rem;color:var(--muted);font-weight:600;margin-bottom:.4rem}
+input[type=text],input[type=tel],input[type=url],input[type=date],textarea{width:100%;font:600 1rem var(--font);color:var(--ink);padding:.8rem 1rem;border:2px solid var(--p200);border-radius:14px;background:var(--p50);transition:border-color .2s,background .2s,box-shadow .2s}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--p500);background:#fff;box-shadow:0 0 0 4px rgba(139,92,246,.18)}
+.field.err input,.field.err textarea{border-color:#e11d48;background:#fff1f3}
+.msg{display:none;color:#e11d48;font-size:.85rem;font-weight:700;margin-top:.3rem}
+.field.err .msg{display:block}
+.counter{text-align:right;font-size:.78rem;color:var(--muted);font-weight:700}
+.opts{display:flex;flex-wrap:wrap;gap:.6rem}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt span{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.1rem;border-radius:999px;border:2px solid var(--p200);background:var(--p50);font-weight:700;transition:all .2s;user-select:none}
+.opt input:checked+span{background:var(--p600);color:#fff;border-color:var(--p600);transform:scale(1.04)}
+.opt input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.opt:hover span{border-color:var(--p500)}
+.scale{display:grid;grid-template-columns:repeat(10,1fr);gap:.4rem}
+.scale .opt span{width:100%;justify-content:center;padding:.6rem 0;border-radius:14px}
+.scale-lab{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);font-weight:700;margin-top:.3rem}
+@media(max-width:520px){.scale{grid-template-columns:repeat(5,1fr)}}
+.zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.7rem}
+.zone .opt span{width:100%;border-radius:16px;padding:.8rem 1rem}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.slot-day{background:var(--p50);border:2px solid var(--p200);border-radius:18px;padding:.8rem .6rem}
+.slot-day h5{font:800 1.05rem var(--font-d);color:var(--p700);text-align:center;margin-bottom:.6rem}
+.slot-day .opt{display:block;margin-bottom:.45rem}
+.slot-day .opt span{width:100%;flex-direction:column;align-items:center;gap:0;border-radius:14px;padding:.5rem .3rem;background:#fff;line-height:1.3;font-size:.85rem}
+.slot-day .opt span b{font-size:.92rem}
+.slot-count{font-size:.85rem;font-weight:800;color:var(--p600);margin-top:.5rem}
+@media(max-width:560px){.slots{grid-template-columns:1fr}.slot-day{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}.slot-day h5{grid-column:1/-1;margin-bottom:.2rem}.slot-day .opt{margin:0}}
+.challenge{background:linear-gradient(135deg,#fff7d6,#ffeab0);border:2px dashed #f4b400;border-radius:18px;padding:1.1rem 1.3rem;margin-bottom:1.2rem;font-weight:600}
+.challenge b{color:#9a6700}
+.nav-btns{display:flex;justify-content:space-between;gap:1rem;margin-top:1.6rem;padding-top:1.4rem;border-top:2px dashed var(--p100)}
+.draft{font-size:.82rem;color:var(--muted);text-align:center;margin-top:1rem;font-weight:700}
+
+/* INTRO + ZONE LISTS */
+.intro{display:grid;grid-template-columns:1.4fr 1fr;gap:1.6rem;margin-bottom:2.6rem;align-items:start}
+.intro-text{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);border:1px solid var(--p100)}
+.intro-text h3{font-size:1.5rem;color:var(--p700);margin-bottom:1rem}
+.intro-text p{color:var(--muted);margin-bottom:1rem;text-align:justify}
+.intro-text blockquote{margin-top:1.2rem;padding:1rem 1.4rem;border-left:5px solid var(--p500);background:var(--p50);border-radius:0 16px 16px 0;font:700 1.25rem var(--font-d);color:var(--p700);font-style:italic}
+.intro-side{background:linear-gradient(160deg,var(--p800),var(--p600));color:#fff;border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow);position:sticky;top:90px}
+.intro-side h3{font-size:1.7rem;color:var(--gold)}
+.intro-side .org{color:#e2d6ff;font-weight:700;margin:.3rem 0 1.2rem}
+.intro-side .badge{margin-bottom:.8rem}
+.dates{list-style:none;display:grid;gap:.7rem;margin-bottom:1.3rem}
+.dates li{display:flex;gap:.8rem;align-items:center;background:rgba(255,255,255,.12);border-radius:16px;padding:.7rem 1rem}
+.dates li>span{font-size:1.6rem}
+.dates small{display:block;color:#d8c9fb;font-weight:700}
+.dates b{font:800 1.2rem var(--font-d)}
+.contact{border-top:2px dashed rgba(255,255,255,.3);padding-top:1rem;display:grid;gap:.35rem}
+.contact small{color:#d8c9fb;font-weight:700}
+.contact a{color:#fff;font-weight:800;text-decoration:none}
+.contact a:hover{color:var(--gold)}
+@media(max-width:860px){.intro{grid-template-columns:1fr}.intro-side{position:static}}
+.zone-card ul{list-style:none;display:grid;gap:.5rem}
+.zone-card li{position:relative;padding-left:1.5rem;color:var(--muted);font-size:.95rem;line-height:1.5}
+.zone-card li::before{content:"🐾";position:absolute;left:0;top:0;font-size:.85rem}
+#zoneCards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto}
+details{background:#fff;border:1px solid var(--p100);border-radius:18px;padding:1.1rem 1.4rem;margin-bottom:.9rem;box-shadow:0 6px 18px -12px rgba(91,33,182,.4)}
+summary{cursor:pointer;font-weight:800;color:var(--p700);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"🐱";transition:transform .3s}
+details[open] summary::after{transform:rotate(360deg) scale(1.2)}
+details p{margin-top:.7rem;color:var(--muted)}
+
+footer{background:var(--p900);color:#cdbcf9;text-align:center;padding:2.6rem 0 2rem}
+footer .logo{justify-content:center;color:#fff;margin-bottom:.5rem}
+footer small{display:block;margin-top:.8rem;opacity:.7}
+
+/* MODAL + TOAST */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(31,17,64,.65);backdrop-filter:blur(6px);display:none;place-items:center;padding:1rem}
+.modal.on{display:grid}
+.modal-box{background:#fff;border-radius:30px;max-width:460px;width:100%;padding:2.2rem 2rem;text-align:center;animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{opacity:0;transform:scale(.7) translateY(30px)}}
+.modal-box svg{width:150px;margin-bottom:.5rem}
+.modal-box h3{font-size:1.7rem;color:var(--p700);margin-bottom:.5rem}
+.modal-box p{color:var(--muted);margin-bottom:1.3rem}
+.modal-box .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--p800);color:#fff;font-weight:700;padding:.8rem 1.4rem;border-radius:999px;box-shadow:var(--shadow);transition:transform .4s cubic-bezier(.3,1.5,.5,1);z-index:120;max-width:92%;text-align:center}
+#toast.on{transform:translate(-50%,0)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* cat parts */
+.blink{animation:blink 4.5s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.08)}}
+.tail{transform-origin:20px 150px;animation:wag 2.4s ease-in-out infinite}
+@keyframes wag{50%{transform:rotate(14deg)}}
+</style>
+</head>
+<body>
+
+<!-- Reusable cat symbol -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="cat" viewBox="0 0 240 230">
+      <g class="tail"><path d="M30 190c-30 4-34-34-14-44 12-6 20 4 12 12-6 6-2 16 10 14" fill="none" stroke="#a78bfa" stroke-width="14" stroke-linecap="round"/></g>
+      <!-- body -->
+      <ellipse cx="125" cy="182" rx="68" ry="40" fill="#c4b5fd"/>
+      <ellipse cx="125" cy="192" rx="40" ry="28" fill="#f5f0ff"/>
+      <ellipse cx="88" cy="214" rx="20" ry="11" fill="#ddd6fe"/>
+      <ellipse cx="162" cy="214" rx="20" ry="11" fill="#ddd6fe"/>
+      <!-- ears -->
+      <path d="M52 78 L60 18 L108 52 Z" fill="#a78bfa"/>
+      <path d="M188 78 L180 18 L132 52 Z" fill="#a78bfa"/>
+      <path d="M64 66 L67 36 L92 54 Z" fill="#f9a8d4"/>
+      <path d="M176 66 L173 36 L148 54 Z" fill="#f9a8d4"/>
+      <!-- head -->
+      <ellipse cx="120" cy="110" rx="80" ry="68" fill="#c4b5fd"/>
+      <path d="M120 44c-6 10-6 18 0 26 6-8 6-16 0-26zM98 50c-2 8 0 14 4 20 2-8 2-14-4-20zM142 50c2 8 0 14-4 20-2-8-2-14 4-20z" fill="#8b5cf6" opacity=".7"/>
+      <ellipse cx="120" cy="132" rx="46" ry="34" fill="#f5f0ff"/>
+      <!-- cheeks -->
+      <circle cx="68" cy="130" r="13" fill="#f9a8d4" opacity=".55"/>
+      <circle cx="172" cy="130" r="13" fill="#f9a8d4" opacity=".55"/>
+      <!-- eyes -->
+      <g class="blink"><ellipse cx="88" cy="106" rx="17" ry="20" fill="#fff"/><g class="pupil"><circle cx="88" cy="108" r="10" fill="#2a0f5c"/><circle cx="84" cy="103" r="3.5" fill="#fff"/></g></g>
+      <g class="blink"><ellipse cx="152" cy="106" rx="17" ry="20" fill="#fff"/><g class="pupil"><circle cx="152" cy="108" r="10" fill="#2a0f5c"/><circle cx="148" cy="103" r="3.5" fill="#fff"/></g></g>
+      <!-- nose + mouth -->
+      <path d="M113 128h14l-7 9z" fill="#ec4899"/>
+      <path d="M120 137v6M120 143c-5 7-14 6-17 1M120 143c5 7 14 6 17 1" fill="none" stroke="#5b21b6" stroke-width="3" stroke-linecap="round"/>
+      <!-- whiskers -->
+      <g stroke="#6d28d9" stroke-width="2.5" stroke-linecap="round" opacity=".7">
+        <path d="M70 140L30 132M70 146L28 150M70 152L34 168"/>
+        <path d="M170 140L210 132M170 146L212 150M170 152L206 168"/>
+      </g>
+      <!-- little bow -->
+      <path d="M104 172l16 8-16 8z M136 172l-16 8 16 8z" fill="#fcd34d"/><circle cx="120" cy="180" r="6" fill="#f59e0b"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="container">
+    <a href="#top" class="logo"><svg viewBox="0 0 240 230"><use href="#cat"/></svg>HYF</a>
+    <ul class="nav-links">
+      <li><a href="#about">Về Ban</a></li>
+      <li><a href="#zones">Phân mảng</a></li>
+      <li><a href="#process">Quy trình</a></li>
+      <li><a href="#faq">Hỏi đáp</a></li>
+      <li><a href="#apply" class="btn btn-primary">Ứng tuyển</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="paws" id="paws"></div>
+  <div class="container">
+    <div>
+      <div class="badge">🐾 Tuyển CTV K68 · Ban Chương trình</div>
+      <h1>Meo meo! Bước lên <em>sân khấu</em> cùng HYF nào!</h1>
+      <p class="lead">Bạn mê tổ chức sự kiện, thích ý tưởng bay bổng và muốn cùng một đội ngũ ấm áp tạo ra những chương trình đáng nhớ? Ban Chương trình đang chờ bạn!</p>
+      <div class="hero-cta">
+        <a href="#apply" class="btn btn-primary">Đăng ký ngay 🐱</a>
+        <a href="#about" class="btn btn-ghost">Tìm hiểu thêm</a>
+      </div>
+      <div class="stats">
+        <div><b>K68</b><span>Dành riêng cho khóa mới</span></div>
+        <div><b>4</b><span>Phân mảng để tỏa sáng</span></div>
+        <div><b>∞</b><span>Kỷ niệm đáng nhớ</span></div>
+      </div>
+    </div>
+    <div class="cat-stage">
+      <div class="glow"></div>
+      <div class="bubble">Gia nhập đi nè! ✨</div>
+      <svg id="heroCat" viewBox="0 0 240 230" role="img" aria-label="Chú mèo tím linh vật của HYF"><use href="#cat"/></svg>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Vì sao là Ban Chương trình?</span>
+      <h2>Nơi ý tưởng được "meo" thành hiện thực</h2>
+      <p>Ban Chương trình là trái tim của mọi sự kiện: từ kịch bản, sân khấu đến những khoảnh khắc khiến cả khán phòng bật cười hay xúc động.</p>
+    </div>
+    <div class="intro reveal">
+      <div class="intro-text">
+        <h3>Chào mừng các em đã đến với đơn tuyển CTV K68 của Ban Chương trình!!! 🎉</h3>
+        <p>Tự hào là một trong những ban đầu tiên được thành lập ngay từ những ngày đầu của Đội SVTN Đồng hương Hưng Yên, ban Chương trình luôn giữ vai trò quan trọng trong việc xây dựng ý tưởng, tổ chức và triển khai các chương trình. Trải qua chặng đường dài phát triển, Ban không chỉ là nơi khởi nguồn của những ý tưởng sáng tạo mà còn là bộ phận trực tiếp góp phần tạo nên thành công và dấu ấn riêng cho mỗi chương trình, sự kiện.</p>
+        <p>Trở thành CTV ban Chương trình, các em sẽ được phụ trách những công việc quan trọng của Đội, góp sức làm nên những chương trình ý nghĩa. Các hoạt động trong ban Chương trình không phải là công việc mà là cơ hội, là môi trường để mỗi cá nhân được rèn luyện, trau dồi những kỹ năng mềm, kỹ năng chuyên môn cần thiết nhất trong việc tổ chức một chương trình, một sự kiện. Không những thế, những kiến thức, những kỹ năng vô cùng quý giá đó sẽ góp phần giúp ích rất nhiều cho công việc, cuộc sống của chúng ta sau này.</p>
+        <blockquote>“Chương trình - nơi đam mê được đánh thức”</blockquote>
+      </div>
+      <aside class="intro-side">
+        <span class="badge">🐾 TUYỂN CTV K68</span>
+        <h3>Ban Chương trình</h3>
+        <p class="org">Đội SVTN Đồng hương Hưng Yên<br>Đại học Kinh tế Quốc dân</p>
+        <ul class="dates">
+          <li><span>💌</span><div><small>Vòng đơn</small><b>23 - 25/11/2026</b></div></li>
+          <li><span>🎤</span><div><small>Vòng phỏng vấn</small><b>26 - 28/11/2026</b></div></li>
+        </ul>
+        <div class="contact">
+          <small>Mọi thắc mắc xin liên hệ</small>
+          <b>Trưởng Ban Chương trình K67: Bùi Đình Đức Anh</b>
+          <a href="tel:0783689563">📞 0783689563</a>
+          <a href="mailto:chuongtrinhhyf@gmail.com">✉️ chuongtrinhhyf@gmail.com</a>
+        </div>
+      </aside>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><div class="ico">💡</div><h3>Sáng tạo không giới hạn</h3><p>Thỏa sức đề xuất ý tưởng, concept và những màn trình diễn "có một không hai".</p></article>
+      <article class="card reveal"><div class="ico">🤝</div><h3>Đội nhóm gắn kết</h3><p>Anh chị luôn đồng hành, chỉ bảo và cùng em trưởng thành sau mỗi chương trình.</p></article>
+      <article class="card reveal"><div class="ico">🚀</div><h3>Kỹ năng thực chiến</h3><p>Học cách lên kịch bản, điều phối, xử lý tình huống và làm việc dưới áp lực.</p></article>
+      <article class="card reveal"><div class="ico">🎉</div><h3>Kỷ niệm khó quên</h3><p>Những đêm tổng duyệt, những tràng pháo tay và hàng tá khoảnh khắc đáng nhớ.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="zones" style="background:#fff">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Phân mảng</span>
+      <h2>Ban Chương trình gồm 04 phân mảng</h2>
+      <p>Mỗi bé mèo một sở trường. Hãy chọn mảng hợp với bạn nhất!</p>
+    </div>
+    <div class="cards" id="zoneCards"></div>
+  </div>
+</section>
+
+<section class="band" id="process">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Quy trình</span>
+      <h2>Hành trình trở thành CTV Ban Chương trình</h2>
+      <p>Đơn giản, thân thiện và đầy thú vị.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Vòng đơn 23–25/11</h3><p>Hoàn thành form bên dưới và chia sẻ thật chân thật về bản thân nhé.</p></div>
+      <div class="step reveal"><h3>Xét duyệt đơn</h3><p>Anh chị đọc từng đơn và liên hệ với các bạn phù hợp.</p></div>
+      <div class="step reveal"><h3>Phỏng vấn 26–28/11</h3><p>Trò chuyện thoải mái cùng anh chị để hiểu nhau hơn. Em chọn ca phù hợp ngay trong đơn nhé.</p></div>
+      <div class="step reveal"><h3>Chào mừng gia nhập</h3><p>Chính thức trở thành CTV K68 của Ban Chương trình! 🎊</p></div>
+    </div>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div><b id="cd-d">00</b><span>Ngày</span></div><div><b id="cd-h">00</b><span>Giờ</span></div><div><b id="cd-m">00</b><span>Phút</span></div><div><b id="cd-s">00</b><span>Giây</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Đơn ứng tuyển</span>
+      <h2>Đăng ký CTV K68 – Ban Chương trình</h2>
+      <p>Mất khoảng 10–15 phút. Dấu <span class="req">*</span> là câu bắt buộc. Bản nháp của bạn được tự lưu trên trình duyệt.</p>
+    </div>
+
+    <div class="form-wrap reveal">
+      <div class="form-top">
+        <h3>🐾 Phiếu đăng ký</h3>
+        <p id="stepLabel">Bước 1/4 · Thông tin cá nhân</p>
+        <div class="progress"><i id="bar"></i><em id="barCat">🐱</em></div>
+        <div class="stepnames" id="stepNames"><span class="on">Cá nhân</span><span>Về Ban</span><span>Kỹ năng</span><span>Thử thách</span></div>
+      </div>
+
+      <form id="form" novalidate autocomplete="on">
+        <!-- STEP 1 -->
+        <div class="fstep on" data-step="1">
+          <h4>😺 Thông tin cá nhân</h4>
+          <div class="grid2">
+            <div class="field"><label for="fullname">Họ và tên<span class="req">*</span></label>
+              <input type="text" id="fullname" name="Họ và tên" required autocomplete="name"><span class="msg">Vui lòng nhập họ và tên.</span></div>
+            <div class="field"><label for="dob">Ngày sinh<span class="req">*</span></label>
+              <input type="date" id="dob" name="Ngày sinh" required><span class="msg">Vui lòng chọn ngày sinh hợp lệ.</span></div>
+          </div>
+          <div class="field"><span class="lbl">Giới tính<span class="req">*</span></span>
+            <div class="opts" data-group="radio-required">
+              <label class="opt"><input type="radio" name="Giới tính" value="Nam" required><span>👦 Nam</span></label>
+              <label class="opt"><input type="radio" name="Giới tính" value="Nữ"><span>👧 Nữ</span></label>
+              <label class="opt"><input type="radio" name="Giới tính" value="Khác"><span>🌈 Khác</span></label>
+            </div><span class="msg">Vui lòng chọn giới tính.</span></div>
+          <div class="grid2">
+            <div class="field"><label for="phone">Số điện thoại<span class="req">*</span></label>
+              <input type="tel" id="phone" name="Số điện thoại" required inputmode="tel" autocomplete="tel" placeholder="0912 345 678"><span class="msg">Số điện thoại chưa hợp lệ (VD: 0912345678).</span></div>
+            <div class="field"><label for="fb">Link Facebook<span class="req">*</span></label>
+              <input type="url" id="fb" name="Link Facebook" required placeholder="https://facebook.com/ten-cua-ban"><span class="msg">Vui lòng nhập link Facebook hợp lệ (bắt đầu bằng https://).</span></div>
+          </div>
+          <div class="field"><label for="group">Em đang là CTV nhóm nào nhỉ?<span class="req">*</span></label>
+            <input type="text" id="group" name="Nhóm CTV hiện tại" required><span class="msg">Vui lòng cho anh chị biết nhóm của em nhé.</span></div>
+          <div class="field"><label for="school">Trường - Lớp<span class="req">*</span></label>
+            <span class="hint">Ví dụ: Đại học Kinh tế Quốc dân - Thương mại điện tử 66</span>
+            <input type="text" id="school" name="Trường - Lớp" required><span class="msg">Vui lòng nhập trường và lớp.</span></div>
+          <div class="field"><label for="address">Nơi ở hiện tại<span class="req">*</span></label>
+            <input type="text" id="address" name="Nơi ở hiện tại" required autocomplete="street-address"><span class="msg">Vui lòng nhập nơi ở hiện tại.</span></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="fstep" data-step="2">
+          <h4>🎭 Em và Ban Chương trình</h4>
+          <div class="field"><label for="why">Tại sao em lại lựa chọn Ban Chương trình?<span class="req">*</span></label>
+            <textarea id="why" name="Lý do chọn Ban Chương trình" required maxlength="1500"></textarea><div class="counter"></div><span class="msg">Hãy chia sẻ lý do của em nhé.</span></div>
+          <div class="field"><label for="exp">Em đã từng hoạt động trong mảng tổ chức chương trình/sự kiện trước đây chưa?<span class="req">*</span></label>
+            <span class="hint">Nếu có, đó là hoạt động nào và em đã hoạt động ở vị trí nào? Nếu chưa, hãy ghi "Chưa có".</span>
+            <textarea id="exp" name="Kinh nghiệm tổ chức chương trình/sự kiện" required maxlength="1500"></textarea><div class="counter"></div><span class="msg">Vui lòng trả lời câu hỏi này.</span></div>
+          <div class="field"><label for="qual">Theo em, một người làm chương trình tốt sẽ cần có những yếu tố gì?<span class="req">*</span></label>
+            <textarea id="qual" name="Yếu tố của người làm chương trình tốt" required maxlength="1500"></textarea><div class="counter"></div><span class="msg">Vui lòng trả lời câu hỏi này.</span></div>
+          <div class="field"><span class="lbl">Hãy đánh giá mức độ phù hợp của bản thân với Ban Chương trình trên thang điểm 10<span class="req">*</span></span>
+            <div class="scale" data-group="radio-required" id="scale"></div>
+            <div class="scale-lab"><span>Chưa phù hợp lắm</span><span>Cực kỳ phù hợp</span></div>
+            <span class="msg">Vui lòng chọn một mức điểm.</span></div>
+          <div class="field"><label for="scoreWhy">Em hãy giải thích lý do cho sự lựa chọn của mình<span class="req">*</span></label>
+            <textarea id="scoreWhy" name="Giải thích mức điểm phù hợp" required maxlength="1500"></textarea><div class="counter"></div><span class="msg">Vui lòng giải thích lý do chọn điểm.</span></div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="fstep" data-step="3">
+          <h4>🎨 Phân mảng & kỹ năng</h4>
+          <div class="field"><span class="lbl">Em muốn đăng kí vào phân mảng nào của Ban Chương trình?<span class="req">*</span></span>
+            <span class="hint">Có thể chọn nhiều mảng.</span>
+            <div class="zones" id="zoneOpts" data-group="check-required"></div>
+            <span class="msg">Vui lòng chọn ít nhất một phân mảng.</span></div>
+          <div class="field"><label for="skill">Nếu em tự tin về một trong những kỹ năng ở các mảng trên (văn nghệ, hội họa,...) hãy thoải mái chia sẻ với anh chị nhaaa!</label>
+            <span class="hint">💡 Dán link video/ảnh/sản phẩm của em (Drive, YouTube, Facebook...). Đừng quên mở quyền truy cập nhé!</span>
+            <textarea id="skill" name="Chia sẻ kỹ năng (link)" maxlength="1500" placeholder="https://drive.google.com/..."></textarea><div class="counter"></div></div>
+          <div class="field"><label for="review">Em nhận xét gì về chương trình "Chào tân CTV K68: Lucidaria - Khúc giao mộng" vừa qua?<span class="req">*</span></label>
+            <span class="hint">Nêu ra cả ưu điểm và khuyết điểm của chương trình nhé. Nếu được phép thay đổi, em sẽ thay đổi phần nào trong chương trình vừa rồi?</span>
+            <textarea id="review" name="Nhận xét chương trình Lucidaria" required maxlength="2500" style="min-height:160px"></textarea><div class="counter"></div><span class="msg">Vui lòng chia sẻ nhận xét của em.</span></div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="fstep" data-step="4">
+          <h4>🧩 Thử thách nhỏ & lời nhắn</h4>
+          <div class="challenge">🎯 <b>Thử thách:</b> Chúng ta cùng đến với một thử thách nhỏ nhé! Giả sử em là <b>TPT</b> của một chương trình. Mọi thứ đã được chuẩn bị kỹ càng từ hôm sơ duyệt và tổng duyệt, tuy nhiên, đến hôm chương trình chính, nhân sự <b>MC</b> đã báo vắng với lý do khẩn cấp ngay sát giờ diễn ra chương trình. <b>Em sẽ xử lý như thế nào trong tình huống này?</b></div>
+          <div class="field"><label for="challenge" class="sr">Cách xử lý tình huống<span class="req">*</span></label>
+            <textarea id="challenge" name="Xử lý tình huống MC vắng mặt" required maxlength="2500" style="min-height:160px"></textarea><div class="counter"></div><span class="msg">Hãy cho anh chị biết cách xử lý của em nhé.</span></div>
+          <div class="field"><span class="lbl">Vote lịch phỏng vấn<span class="req">*</span></span>
+            <span class="hint">Phỏng vấn diễn ra trong 3 ngày 26, 27, 28/11 (mỗi ngày 5 ca). Em chọn tất cả các ca em có thể tham gia nhé, càng nhiều càng dễ xếp lịch!</span>
+            <div id="slotGrid" class="slots" data-group="check-required"></div>
+            <div class="slot-count" id="slotCount">Đã chọn 0 ca</div>
+            <span class="msg">Vui lòng chọn ít nhất một ca phỏng vấn.</span></div>
+          <div class="field"><label for="other">Ngoài Ban Chương trình, em còn đăng ký những ban nào nữa không?<span class="req">*</span></label>
+            <span class="hint">Nếu không, hãy ghi "Không".</span>
+            <input type="text" id="other" name="Các ban khác đã đăng ký" required><span class="msg">Vui lòng trả lời câu hỏi này.</span></div>
+          <div class="field"><label for="note">Em có điều gì muốn nói với anh chị Ban Chương trình không?</label>
+            <textarea id="note" name="Lời nhắn gửi anh chị" maxlength="1500" placeholder="Một lời chào, một lời hứa hay một câu đùa cũng được nè 🐱"></textarea><div class="counter"></div></div>
+        </div>
+
+        <div class="nav-btns">
+          <button type="button" class="btn btn-ghost" id="prev" style="visibility:hidden">← Quay lại</button>
+          <button type="button" class="btn btn-primary" id="next">Tiếp tục →</button>
+          <button type="submit" class="btn btn-primary" id="submit" style="display:none">Gửi đơn 🐾</button>
+        </div>
+        <p class="draft" id="draftInfo">💾 Bản nháp tự động lưu trên trình duyệt này.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#fff">
+  <div class="container">
+    <div class="sec-head reveal"><span class="tag">Hỏi đáp</span><h2>Có gì thắc mắc không nè?</h2></div>
+    <div class="faq">
+      <details class="reveal"><summary>Em chưa có kinh nghiệm làm chương trình thì có đăng ký được không?</summary><p>Được chứ! Ban luôn chào đón những bạn nhiệt huyết, sẵn sàng học hỏi. Anh chị sẽ hướng dẫn từ những bước cơ bản.</p></details>
+      <details class="reveal"><summary>Em có thể đăng ký nhiều phân mảng không?</summary><p>Có nhé. Em có thể chọn nhiều phân mảng và chia sẻ kỹ năng nổi bật để anh chị xếp vị trí phù hợp nhất.</p></details>
+      <details class="reveal"><summary>Em có phải đăng ký ban khác không?</summary><p>Không bắt buộc. Em có thể đăng ký thêm ban khác và ghi rõ trong đơn để anh chị nắm thông tin.</p></details>
+      <details class="reveal"><summary>Gửi đơn rồi có sửa lại được không?</summary><p>Nếu cần chỉnh sửa hoặc có thắc mắc, em hãy liên hệ Trưởng Ban Chương trình K67 Bùi Đình Đức Anh qua số <a href="tel:0783689563">0783689563</a> hoặc email <a href="mailto:chuongtrinhhyf@gmail.com">chuongtrinhhyf@gmail.com</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="#top" class="logo"><svg viewBox="0 0 240 230" width="36" height="36"><use href="#cat"/></svg>HYF</a>
+    <p>Tuyển CTV K68 Ban Chương trình · Đội SVTN Đồng hương Hưng Yên · Đại học Kinh tế Quốc dân</p>
+    <p>📞 <a href="tel:0783689563">0783689563</a> · ✉️ <a href="mailto:chuongtrinhhyf@gmail.com">chuongtrinhhyf@gmail.com</a></p>
+    <small>Made with 💜 và một chú mèo tím · © HYF</small>
+  </div>
+</footer>
+
+<!-- Success modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-box">
+    <svg viewBox="0 0 240 230"><use href="#cat"/></svg>
+    <h3 id="mTitle">Đã gửi đơn thành công! 🎉</h3>
+    <p id="mText">Cảm ơn em đã ứng tuyển Ban Chương trình HYF. Anh chị sẽ sớm liên hệ với em. Meo meo~</p>
+    <div class="row">
+      <button class="btn btn-ghost" id="dl" type="button">⬇ Tải bản sao</button>
+      <button class="btn btn-primary" id="closeModal" type="button">Đóng</button>
+    </div>
+  </div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============ CẤU HÌNH (chỉnh tại đây) ============ */
+const CONFIG = {
+  // Dán URL Google Apps Script Web App / Formspree / API của bạn để nhận dữ liệu. Để trống = chỉ lưu trên trình duyệt + cho tải file.
+  endpoint: "",
+  // Hạn chót đăng ký (để hiện đồng hồ đếm ngược). VD: "2026-11-30T23:59:00+07:00". Để trống = ẩn.
+  deadline: "",
+  // Các phân mảng của Ban Chương trình (sửa tuỳ ý)
+  zones: [
+    { icon:"📝", name:"Nội dung", tasks:[
+        "Triển khai việc tìm hiểu mục đích, ý nghĩa của chương trình",
+        "Tổng hợp nội dung, ý tưởng, chủ đề xuyên suốt chương trình",
+        "Xây dựng bản kế hoạch thực hiện, timeline, dự trù kinh phí, quản trị rủi ro",
+        "Chọn MC và triển khai viết kịch bản MC",
+        "Dự kiến thời gian và địa điểm cho sơ duyệt và tổng duyệt",
+        "Liên hệ mảng Văn nghệ và Kĩ thuật để thực hiện những công việc cần thiết" ] },
+    { icon:"🎤", name:"Văn nghệ", tasks:[
+        "Dựa trên ý tưởng, chủ đề của chương trình, xây dựng list tiết mục phù hợp",
+        "Lên danh sách nhân sự tiết mục",
+        "Lên lịch tập cho toàn bộ nhân sự tham gia",
+        "Kiểm soát tiến độ tập luyện, báo cáo tiến độ với tổng phụ trách để thống nhất lịch duyệt",
+        "Chủ động làm việc với mảng kĩ thuật để báo cáo nhạc, thông tin kĩ thuật cần thiết",
+        "Lên danh sách đạo cụ, trang phục, báo cáo với tổng phụ trách để triển khai" ] },
+    { icon:"🎧", name:"Kĩ thuật", tasks:[
+        "Tổng hợp nhạc, video,… để phục vụ tiết mục trong chương trình",
+        "Edit video, cắt ghép nhạc, tạo slide",
+        "Chạy kĩ thuật trong chương trình",
+        "Liên hệ với các mảng liên quan để đảm bảo công việc trong chương trình" ] },
+    { icon:"📦", name:"Hậu cần", tasks:[
+        "Phụ trách phần lễ tân",
+        "Chuẩn bị đồ đạc trước chương trình" ] }
+  ],
+  // Lịch phỏng vấn (sửa tại đây nếu đổi lịch)
+  interviewDays: ["26/11", "27/11", "28/11"],
+  interviewSlots: [
+    { name: "Ca 1", time: "8h00 – 9h30" },
+    { name: "Ca 2", time: "9h30 – 11h00" },
+    { name: "Ca 3", time: "11h00 – 12h30" },
+    { name: "Ca 4", time: "14h00 – 15h30" },
+    { name: "Ca 5", time: "15h30 – 17h00" }
+  ]
+};
+/* ================================================== */
+
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const KEY = "hyf_k68_ctv_draft_v1";
+let current = 1;
+const TOTAL = 4;
+const stepTitles = ["Thông tin cá nhân","Em và Ban Chương trình","Phân mảng & kỹ năng","Thử thách nhỏ & lời nhắn"];
+
+/* ---------- Render phân mảng ---------- */
+const esc = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+$("#zoneCards").innerHTML = CONFIG.zones.map(z =>
+  `<article class="card zone-card reveal"><div class="ico">${z.icon}</div><h3>Mảng ${esc(z.name)}</h3><ul>${z.tasks.map(t => `<li>${esc(t)}</li>`).join("")}</ul></article>`).join("");
+$("#zoneOpts").innerHTML = CONFIG.zones.map(z =>
+  `<div class="zone"><label class="opt"><input type="checkbox" name="Phân mảng" value="${esc(z.name)}"><span>${z.icon} ${esc(z.name)}</span></label></div>`).join("");
+
+/* ---------- Lịch phỏng vấn ---------- */
+$("#slotGrid").innerHTML = CONFIG.interviewDays.map(day =>
+  `<div class="slot-day"><h5>📅 Ngày ${day}</h5>` +
+  CONFIG.interviewSlots.map(s =>
+    `<label class="opt"><input type="checkbox" name="Lịch phỏng vấn" value="${day} - ${s.name} (${s.time})"><span><b>${s.name}</b>${s.time}</span></label>`
+  ).join("") + `</div>`).join("");
+function updSlotCount(){ $("#slotCount").textContent = `Đã chọn ${$$("#slotGrid input:checked").length} ca`; }
+$("#slotGrid").addEventListener("change", updSlotCount);
+
+/* ---------- Thang điểm 1-10 ---------- */
+$("#scale").innerHTML = Array.from({length:10},(_,i)=>
+  `<label class="opt"><input type="radio" name="Mức độ phù hợp (/10)" value="${i+1}"><span>${i+1}</span></label>`).join("");
+
+/* ---------- Hạt mèo (paws) nền hero ---------- */
+$("#paws").innerHTML = Array.from({length:16},()=>{
+  const l=Math.random()*100,t=Math.random()*100,s=18+Math.random()*34,d=10+Math.random()*10,dl=-Math.random()*14;
+  return `<i style="left:${l}%;top:${t}%;width:${s}px;height:${s}px;animation-duration:${d}s;animation-delay:${dl}s"></i>`;
+}).join("");
+
+/* ---------- Mắt mèo nhìn theo con trỏ ---------- */
+const cats = $$("svg:not([width='0'])");
+document.addEventListener("pointermove", e => {
+  $$("svg").forEach(svg => {
+    const pupils = $$(".pupil", svg);
+    if(!pupils.length) return;
+    const r = svg.getBoundingClientRect();
+    if(r.bottom < 0 || r.top > innerHeight) return;
+    const dx = e.clientX - (r.left + r.width/2), dy = e.clientY - (r.top + r.height/2);
+    const dist = Math.hypot(dx, dy) || 1, m = Math.min(5, dist/60);
+    pupils.forEach(p => p.style.transform = `translate(${dx/dist*m}px,${dy/dist*m}px)`);
+  });
+});
+/* Mèo trong <use> nằm trong shadow tree nên cần cách khác: nhân bản trực tiếp vào DOM */
+(function inlineCats(){
+  const sym = document.getElementById("cat");
+  $$("svg").forEach(svg => {
+    const use = svg.querySelector(":scope > use[href='#cat']");
+    if(!use) return;
+    use.remove();
+    svg.insertAdjacentHTML("beforeend", sym.innerHTML);
+  });
+})();
+
+/* ---------- Hiệu ứng reveal ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+$$(".reveal").forEach(el => io.observe(el));
+
+/* ---------- Đếm ngược ---------- */
+if(CONFIG.deadline){
+  const end = new Date(CONFIG.deadline).getTime();
+  if(!isNaN(end)){
+    const cd = $("#countdown"); cd.classList.add("on");
+    const tick = () => {
+      let t = Math.max(0, end - Date.now());
+      const d = Math.floor(t/864e5); t%=864e5;
+      const h = Math.floor(t/36e5); t%=36e5;
+      const m = Math.floor(t/6e4), s = Math.floor(t%6e4/1e3);
+      [["d",d],["h",h],["m",m],["s",s]].forEach(([k,v]) => $("#cd-"+k).textContent = String(v).padStart(2,"0"));
+    };
+    tick(); setInterval(tick, 1000);
+  }
+}
+
+/* ---------- Toast ---------- */
+let tt;
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("on"),3200); }
+
+/* ---------- Bộ đếm ký tự ---------- */
+$$("textarea").forEach(ta => {
+  const c = ta.parentElement.querySelector(".counter");
+  const upd = () => { if(c) c.textContent = `${ta.value.length}/${ta.maxLength}`; };
+  ta.addEventListener("input", upd); upd();
+});
+
+/* ---------- Validate ---------- */
+const phoneRe = /^(0|\+?84)\d{9,10}$/;
+function validateField(field){
+  let ok = true;
+  const group = field.querySelector("[data-group]");
+  if(group){
+    const type = group.dataset.group;
+    ok = type === "radio-required"
+      ? !!group.querySelector("input:checked")
+      : !!group.querySelector("input:checked");
+  } else {
+    const inp = field.querySelector("input,textarea");
+    if(!inp) return true;
+    const v = inp.value.trim();
+    if(inp.required && !v) ok = false;
+    if(ok && v){
+      if(inp.type === "tel") ok = phoneRe.test(v.replace(/[\s.\-()]/g,""));
+      if(inp.type === "url") ok = /^https?:\/\/\S+\.\S+/i.test(v);
+      if(inp.type === "date"){ const d = new Date(v), now = new Date(); ok = !isNaN(d) && d < now && d.getFullYear() > 1980; }
+    }
+  }
+  field.classList.toggle("err", !ok);
+  return ok;
+}
+function validateStep(n){
+  const sec = $(`.fstep[data-step="${n}"]`);
+  let first = null, all = true;
+  $$(".field", sec).forEach(f => {
+    const hasReq = f.querySelector("[required]") || f.querySelector("[data-group]");
+    if(!hasReq && !f.querySelector("input[type=url],input[type=tel]")) return;
+    if(!validateField(f)){ all = false; first = first || f; }
+  });
+  if(first){ first.scrollIntoView({behavior:"smooth",block:"center"}); const i = first.querySelector("input,textarea"); if(i) setTimeout(()=>i.focus({preventScroll:true}),350); }
+  return all;
+}
+$("#form").addEventListener("input", e => { const f = e.target.closest(".field"); if(f && f.classList.contains("err")) validateField(f); });
+$("#form").addEventListener("change", e => { const f = e.target.closest(".field"); if(f && f.classList.contains("err")) validateField(f); });
+
+/* ---------- Điều hướng bước ---------- */
+function show(n){
+  current = n;
+  $$(".fstep").forEach(s => s.classList.toggle("on", +s.dataset.step === n));
+  const pct = n / TOTAL * 100;
+  $("#bar").style.width = pct + "%";
+  $("#barCat").style.left = pct + "%";
+  $("#stepLabel").textContent = `Bước ${n}/${TOTAL} · ${stepTitles[n-1]}`;
+  $$("#stepNames span").forEach((s,i) => s.classList.toggle("on", i < n));
+  $("#prev").style.visibility = n === 1 ? "hidden" : "visible";
+  $("#next").style.display = n === TOTAL ? "none" : "inline-flex";
+  $("#submit").style.display = n === TOTAL ? "inline-flex" : "none";
+  $(".form-wrap").scrollIntoView({behavior:"smooth",block:"start"});
+}
+$("#next").addEventListener("click", () => { if(validateStep(current)) show(current+1); else toast("Em kiểm tra lại các ô đỏ nhé 🐱"); });
+$("#prev").addEventListener("click", () => show(current-1));
+$("#form").addEventListener("keydown", e => {
+  if(e.key === "Enter" && e.target.tagName === "INPUT"){ e.preventDefault(); if(current < TOTAL) $("#next").click(); }
+});
+
+/* ---------- Thu thập dữ liệu ---------- */
+function collect(){
+  const fd = new FormData($("#form")), data = {};
+  for(const [k,v] of fd.entries()){
+    if(k in data){ data[k] = [].concat(data[k], v); } else data[k] = v;
+  }
+  ["Phân mảng","Lịch phỏng vấn"].forEach(k => { if(Array.isArray(data[k])) data[k] = data[k].join("; "); });
+  data["Thời gian gửi"] = new Date().toLocaleString("vi-VN",{timeZone:"Asia/Ho_Chi_Minh"});
+  return data;
+}
+
+/* ---------- Lưu / khôi phục nháp ---------- */
+function saveDraft(){
+  try{
+    const d = {};
+    $$("#form input, #form textarea").forEach(el => {
+      if(el.type === "radio" || el.type === "checkbox"){ if(el.checked){ (d[el.name] = d[el.name] || []).push(el.value); } }
+      else d[el.name] = el.value;
+    });
+    localStorage.setItem(KEY, JSON.stringify(d));
+    $("#draftInfo").textContent = "💾 Đã lưu nháp lúc " + new Date().toLocaleTimeString("vi-VN");
+  }catch(_){}
+}
+function loadDraft(){
+  try{
+    const d = JSON.parse(localStorage.getItem(KEY) || "null"); if(!d) return;
+    $$("#form input, #form textarea").forEach(el => {
+      const v = d[el.name]; if(v == null) return;
+      if(el.type === "radio" || el.type === "checkbox") el.checked = [].concat(v).includes(el.value);
+      else el.value = v;
+    });
+    $$("textarea").forEach(t => t.dispatchEvent(new Event("input")));
+    updSlotCount();
+    $("#draftInfo").textContent = "💾 Đã khôi phục bản nháp của em.";
+  }catch(_){}
+}
+let st; $("#form").addEventListener("input", () => { clearTimeout(st); st = setTimeout(saveDraft, 500); });
+$("#form").addEventListener("change", () => { clearTimeout(st); st = setTimeout(saveDraft, 300); });
+loadDraft();
+
+/* ---------- Gửi form ---------- */
+let lastData = null;
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  for(let i = 1; i <= TOTAL; i++){ if(!validateStep(i)){ show(i); validateStep(i); toast("Còn câu bắt buộc chưa điền ở bước " + i + " nhé!"); return; } }
+  const btn = $("#submit"); btn.disabled = true; btn.textContent = "Đang gửi… 🐾";
+  const data = collect(); lastData = data;
+  try{
+    if(CONFIG.endpoint){
+      await fetch(CONFIG.endpoint, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(data) });
+    } else {
+      const all = JSON.parse(localStorage.getItem("hyf_k68_submissions") || "[]"); all.push(data);
+      localStorage.setItem("hyf_k68_submissions", JSON.stringify(all));
+      await new Promise(r => setTimeout(r, 700));
+    }
+    localStorage.removeItem(KEY);
+    $("#mText").textContent = CONFIG.endpoint
+      ? "Cảm ơn em đã ứng tuyển Ban Chương trình HYF. Anh chị sẽ sớm liên hệ với em. Meo meo~"
+      : "Đơn của em đã được lưu trên trình duyệt (chế độ demo, chưa kết nối máy chủ). Hãy tải bản sao để gửi cho anh chị nhé!";
+    $("#modal").classList.add("on"); $("#closeModal").focus();
+    $("#form").reset(); $$("textarea").forEach(t => t.dispatchEvent(new Event("input"))); updSlotCount();
+    show(1);
+  }catch(err){
+    toast("Gửi chưa được, em thử lại giúp anh chị nhé! 😿");
+  }finally{
+    btn.disabled = false; btn.textContent = "Gửi đơn 🐾";
+  }
+});
+$("#closeModal").addEventListener("click", () => $("#modal").classList.remove("on"));
+$("#modal").addEventListener("click", e => { if(e.target.id === "modal") $("#modal").classList.remove("on"); });
+document.addEventListener("keydown", e => { if(e.key === "Escape") $("#modal").classList.remove("on"); });
+$("#dl").addEventListener("click", () => {
+  if(!lastData) return;
+  const blob = new Blob([JSON.stringify(lastData, null, 2)], {type:"application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = "HYF_K68_ChuongTrinh_" + (lastData["Họ và tên"] || "don").replace(/\s+/g,"_") + ".json";
+  a.click(); URL.revokeObjectURL(a.href);
+});
+show(1);
+window.scrollTo(0,0);
+</script>
+</body>
+</html>
